@@ -66,11 +66,13 @@ class Properties:
                     raise error
                 return default_value
 
-    def getCurrentYearMonth(self):
+    @staticmethod
+    def getCurrentYearMonth():
         """ year and month information are not get from properties file """
         return YearMonth()
 
-    def getEnv(self, name, default_value=None):
+    @staticmethod
+    def getEnv(name, default_value=None):
         """ Get environment variable """
         try:
             return os.environ[name]
