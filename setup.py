@@ -25,7 +25,7 @@ setup(
     author='Jeff Wang',
     author_email='jeffwji@test.com',
 
-    version_command='git describe --always --long',
+    version_command='git describe --always --long --dirty=-dev',
 
     name = "utils",
     packages = find_packages(

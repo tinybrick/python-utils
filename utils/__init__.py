@@ -11,7 +11,7 @@ import datetime
 import logging
 import base64
 
-__version__="1.0.0"
+__version__="1.0.1"
 
 ##################################
 # Load properties from config file, default filename is config.properties locates in script launch folder
