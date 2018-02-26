@@ -11,6 +11,8 @@ import datetime
 import logging
 import base64
 
+__version__="1.0.0"
+
 ##################################
 # Load properties from config file, default filename is config.properties locates in script launch folder
 #
@@ -91,6 +93,9 @@ class YearMonth:
 
     def __str__(self):
         return format()
+
+    def __eq__(self, other):
+        return self.dt.__eq__(other.dt)
 
     def format(self, separator="-"):
         """ Format output """

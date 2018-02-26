@@ -2,12 +2,24 @@
 Setuptool for building
 """
 
-from setuptools import setup, find_packages
+import os
+from setuptools import setup, find_packages, Command
+
+class CleanCommand(Command):
+    """Custom clean command to tidy up the project root."""
+    user_options = []
+    def initialize_options(self):
+        pass
+    def finalize_options(self):
+        pass
+    def run(self):
+        os.system('rm -vrf ./build ./dist ./*.pyc ./*.tgz ./*.egg-info')
+
 
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
 
-__version__ = "0.0.1"
+from utils.__init__ import __version__
 
 setup(
     author='Jeff Wang',
@@ -15,7 +27,7 @@ setup(
 
     version_command='git describe --always --long --dirty=-dev',
 
-    name = "mymodules",
+    name = "utils",
     packages = find_packages(
       exclude=['tests', '*.tests', '*.tests.*']
     ),
