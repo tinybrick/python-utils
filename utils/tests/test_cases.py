@@ -48,7 +48,7 @@ class testProperties(TestCase):
         """ Demo for usage """
         from utils import Properties
         PROPS = Properties("utils/tests/test.conf", environment="other")
-        self.assertEquals(200, PROPS.getInt("test.other.int.key"))
+        self.assertEquals(100, PROPS.getInt("test.int.key"))
 
     def test_other_boolean_properties(self):
         """ Demo for usage """
