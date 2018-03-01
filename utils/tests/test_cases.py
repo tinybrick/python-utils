@@ -28,13 +28,15 @@ class testProperties(TestCase):
     def test_env_properties(self):
         """ Demo for usage """
         from utils import Properties
-        self.assertEquals("Windows_NT", Properties.getEnv("OS"))
+        import os
+        os.environ["PROFILE"] = "test"
+        self.assertEquals("test", Properties.getEnv("PROFILE"))
 
     def test_date_properties(self):
         """ Demo for usage """
         from utils import Properties
         from utils import YearMonth
-        self.assertEquals(YearMonth(), Properties.getCurrentYearMonth())
+        self.assertEquals(YearMonth().format(), Properties.getCurrentYearMonth().format())
 
     def test_other_string_properties(self):
         """ Demo for usage """
