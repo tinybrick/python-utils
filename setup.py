@@ -1,7 +1,7 @@
 """
 Setuptool for building
 """
-
+from utils.__init__ import __version__
 import os
 from setuptools import setup, find_packages, Command
 
@@ -18,8 +18,6 @@ class CleanCommand(Command):
 
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
-
-from utils.__init__ import __version__
 
 setup(
     author='Jeff Wang',
