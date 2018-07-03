@@ -1,2 +1,3 @@
 # List dependencies below
 configparser
+PyCrypto
