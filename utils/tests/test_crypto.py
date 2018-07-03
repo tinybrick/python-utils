@@ -7,3 +7,23 @@ class TestCrypto(TestCase):
         enc, dec = aes("132")
         code = enc("abc")
         assert("abc" == dec(code))
+        code = enc("ABC")
+        assert("ABC" == dec(code))
+
+        content = "longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 " \
+            "longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 " \
+            "longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 " \
+            "longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 " \
+            "longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 " \
+            "longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 " \
+            "longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 " \
+            "longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 " \
+            "longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 " \
+            "longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 " \
+            "longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 " \
+            "longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 " \
+            "longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 " \
+            "longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 " \
+            "longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 longer then 256 "
+        code = enc(content)
+        assert(content == dec(code))
