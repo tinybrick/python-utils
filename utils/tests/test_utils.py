@@ -79,3 +79,4 @@ class testProperties(TestCase):
             print("Cache you!")
             return
         self.fail()
+
